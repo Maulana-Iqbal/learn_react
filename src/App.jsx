@@ -1,37 +1,40 @@
-import { TbBrandTwitter, TbBrandFacebook, TbBrandGithub, TbBrandGoogle } from 'react-icons/tb';
-import clsx from 'clsx';
-export default function App() {
-	const type = 'submit';
-	const onClick = () => console.log('Iqbal Maulana Default');
+import { TbBrandGithub } from 'react-icons/tb';
+import Button from './components/button';
+import Card from './components/Card';
+
+function App() {
 	return (
-		<div className={'bg-slate-900 grid place-content-center min-h-screen'}>
-			<div className={'flex gap-x-2'}>
-				<Button>
-					<TbBrandFacebook />
-					Login
-				</Button>
-				<Button className={'bg-black'} onClick={() => console.log('Iqbal Maulana')} type='submit'>
-					<TbBrandGithub />
-					Login
-				</Button>
-				<Button className={'bg-sky-600'} onClick={() => console.log('Iqbal Maulana Sky')} type='reset'>
-					<TbBrandTwitter />
-					Login
-				</Button>
-				<Button className={'bg-red-600'} onClick={() => console.log('Iqbal Maulana Red')} type='button'>
-					<TbBrandGoogle />
-					Login
-				</Button>
+		<div className={'bg-slate-100 text-slate-800 tracking-tight antialiased flex items-center justify-center min-h-screen'}>
+			<div className='max-w-2xl flex items-center gap-4 w-full'>
+				<Card>
+					<Card.Title>Halo React</Card.Title>
+					<Card.Body>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui veritatis praesentium blanditiis neque accusantium excepturi quaerat expedita atque numquam, sit distinctio amet ducimus sapiente eos aliquam labore alias
+						architecto ipsa.
+					</Card.Body>
+					<Card.Footer>
+						<Button>
+							<TbBrandGithub />
+							Login
+						</Button>
+					</Card.Footer>
+				</Card>
+				<Card>
+					<Card.Title>Halo React</Card.Title>
+					<Card.Body>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui veritatis praesentium blanditiis neque accusantium excepturi quaerat expedita atque numquam, sit distinctio amet ducimus sapiente eos aliquam labore alias
+						architecto ipsa.
+					</Card.Body>
+					<Card.Footer>
+						<Button>
+							<TbBrandGithub />
+							Login
+						</Button>
+					</Card.Footer>
+				</Card>
 			</div>
 		</div>
 	);
 }
 
-function Button(props) {
-	const { className = 'bg-blue-600', children, text, type = 'submit' } = props;
-	return (
-		<button {...props} type={type} className={clsx(className, '[&>svg]:w-5 [&>svg]:h-5 [&>svg]:stroke-1 flex item-center gap-x-3 text-white  px-4 py-2 rounded')}>
-			{text || children}
-		</button>
-	);
-}
+export default App;
